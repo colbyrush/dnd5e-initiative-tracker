@@ -1,0 +1,3 @@
+drag/drop bestiary for current encounter
+searchable bestiary
+basically make an encounter builder

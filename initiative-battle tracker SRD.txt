@@ -1,0 +1,66 @@
+initiative / battle tracker
+
+outline:
+create encounter list
+	create combatant group
+		choose if monster or PC
+			if monster
+				enter creature name and amount of monster(s)
+					pull stat block from dnd resource
+						parse HP and dex bonus from stat block
+						link/display stat block for each unique monster
+			if PC
+				enter PC name and HP
+		input initiative roll
+			if PC 
+				input given count
+			if monster
+				auto adds monster dex bonus to given roll
+	save combatant group to encounter list
+	repeat until all combatant groups are added
+sort encounter list by initiative count high to low
+	if same initiative count
+		prompt to manually select who goes first/second/etc
+			resort list once all decided
+	display sorted list
+		if multiple members in a combatant group
+			display all members and their curr HP
+edit encounter list as needed
+	update status effects of combatant group member
+		option to manually add status and choose turn duration of status
+	update combatant group member hp
+		add/remove HP as needed
+			if HP hits <=0
+				if PC
+					allow negative HP
+						on negative half HP remove from list
+							resort list as needed
+					display death saves
+						on death remove from list
+							resort list as needed
+				if monster
+					remove from combatant group
+						if combatant group empty remove from list
+							resort list as needed
+	add/remove combatant groups as needed
+		sort list according to new encounter list once completed
+track current encounter round
+	start at top of list and work down
+		manually end combatant group member turn
+			remove temp status effects at end of turn automatically
+		reset to top of list after bottom of list ends turn
+	display who's turn it is
+	display status effects on combatant group member turn
+	display how many turns taken by combatant group member since beginning of encounter
+end combat
+	reset application
+	
+
+
+
+
+
+
+
+
+
